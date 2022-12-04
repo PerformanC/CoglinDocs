@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['coglink_5ferror_0',['COGLINK_ERROR',['../definitions_8h.html#a9ffbbc6c12cd6558055b5ce29f2a1661',1,'definitions.h']]],
+  ['coglink_5fjsmnf_5ferror_5ffind_1',['COGLINK_JSMNF_ERROR_FIND',['../definitions_8h.html#a8a290946b33231883f7179540af02a9a',1,'definitions.h']]],
+  ['coglink_5fjsmnf_5ferror_5fload_2',['COGLINK_JSMNF_ERROR_LOAD',['../definitions_8h.html#a830f8efab9418d5550446650cd7ed543',1,'definitions.h']]],
+  ['coglink_5fjsmnf_5ferror_5fparse_3',['COGLINK_JSMNF_ERROR_PARSE',['../definitions_8h.html#a508045c95132841477e0e6d1c89329e7',1,'definitions.h']]],
+  ['coglink_5flibcurl_5ffailed_5finitialize_4',['COGLINK_LIBCURL_FAILED_INITIALIZE',['../definitions_8h.html#aa3c4eb7a51c4b4bc374950938b8b8105',1,'definitions.h']]],
+  ['coglink_5flibcurl_5ffailed_5fperform_5',['COGLINK_LIBCURL_FAILED_PERFORM',['../definitions_8h.html#a9bda17e57b9d92f85c8c5c96ab7bb773',1,'definitions.h']]],
+  ['coglink_5flibcurl_5ffailed_5fsetopt_6',['COGLINK_LIBCURL_FAILED_SETOPT',['../definitions_8h.html#ab5867462527bbd70446b1ad59d713eee',1,'definitions.h']]],
+  ['coglink_5floadtype_5fload_5ffailed_7',['COGLINK_LOADTYPE_LOAD_FAILED',['../definitions_8h.html#a3ad5d068f7ab55d98b3b6c3410b90d83',1,'definitions.h']]],
+  ['coglink_5floadtype_5fno_5fmatches_8',['COGLINK_LOADTYPE_NO_MATCHES',['../definitions_8h.html#a793c5e18c8ffdb3f8414dff701fbf61a',1,'definitions.h']]],
+  ['coglink_5floadtype_5fplaylist_5floaded_9',['COGLINK_LOADTYPE_PLAYLIST_LOADED',['../definitions_8h.html#ac4357b4c849866006ab8a61f64f191b5',1,'definitions.h']]],
+  ['coglink_5floadtype_5fsearch_5fresult_10',['COGLINK_LOADTYPE_SEARCH_RESULT',['../definitions_8h.html#a1b316fc97cc310a88d0b0832f26ce957',1,'definitions.h']]],
+  ['coglink_5floadtype_5ftrack_5floaded_11',['COGLINK_LOADTYPE_TRACK_LOADED',['../definitions_8h.html#aef78ebe2592289490cfdf46b8159174d',1,'definitions.h']]],
+  ['coglink_5fno_5fplayers_12',['COGLINK_NO_PLAYERS',['../definitions_8h.html#abd9b62198d9e17cdcd6d0b8dfd86b1bf',1,'definitions.h']]],
+  ['coglink_5fproceed_13',['COGLINK_PROCEED',['../definitions_8h.html#acc329ad661f346de9e851cc19511768f',1,'definitions.h']]],
+  ['coglink_5frouterplanner_5fnot_5fset_14',['COGLINK_ROUTERPLANNER_NOT_SET',['../definitions_8h.html#a2ea145494d47b462b3d89be0e68e16ef',1,'definitions.h']]],
+  ['coglink_5fstop_15',['COGLINK_STOP',['../definitions_8h.html#a56b903107dec1fb1de655add329e500a',1,'definitions.h']]],
+  ['coglink_5fsuccess_16',['COGLINK_SUCCESS',['../definitions_8h.html#a8ee48555d8f62c4f1e848570afce9776',1,'definitions.h']]]
+];
