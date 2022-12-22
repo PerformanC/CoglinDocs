@@ -21,9 +21,8 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Coglink<span id="projectnumber">&#160;1.5.0</span>
+   <div id="projectname">Coglink<span id="projectnumber">&#160;v1.6.0</span>
    </div>
-   <div id="projectbrief">A C99 C Lavalink wrapper</div>
   </td>
  </tr>
  </tbody>
@@ -115,19 +114,20 @@ $(function() {
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">struct </span>pluginSecurity {</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  _Bool allowReadIOPoller;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  _Bool allowReadBotToken;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  _Bool allowReadConcordWebsocket;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>};</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keyword">struct </span>coglinkPlugins {</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keyword">struct </span>pluginEventsInternal *events;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keyword">struct </span>pluginSecurity *security;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keywordtype">int</span> amount;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>};</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="plugins_8h.html#adda8bb355f4b00cc2cdb0d53994190f2">   57</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="plugins_8h.html#adda8bb355f4b00cc2cdb0d53994190f2">coglink_setPluginEvents</a>(<span class="keyword">struct</span> lavaInfo *lavaInfo, <span class="keyword">struct</span> pluginEvents *pluginEvents);</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  _Bool allowReadWebsocket;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  _Bool allowReadBotToken;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  _Bool allowReadConcordWebsocket;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>};</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keyword">struct </span>coglinkPlugins {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keyword">struct </span>pluginEventsInternal *events;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keyword">struct </span>pluginSecurity *security;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keywordtype">int</span> amount;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>};</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="plugins_8h.html#adda8bb355f4b00cc2cdb0d53994190f2">   58</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="plugins_8h.html#adda8bb355f4b00cc2cdb0d53994190f2">coglink_setPluginEvents</a>(<span class="keyword">struct</span> lavaInfo *lavaInfo, <span class="keyword">struct</span> pluginEvents *pluginEvents);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aplugins_8h_html_adda8bb355f4b00cc2cdb0d53994190f2"><div class="ttname"><a href="plugins_8h.html#adda8bb355f4b00cc2cdb0d53994190f2">coglink_setPluginEvents</a></div><div class="ttdeci">void coglink_setPluginEvents(struct lavaInfo *lavaInfo, struct pluginEvents *pluginEvents)</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

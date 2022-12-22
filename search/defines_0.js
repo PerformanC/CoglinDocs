@@ -16,5 +16,6 @@ var searchData=
   ['coglink_5fproceed_13',['COGLINK_PROCEED',['../definitions_8h.html#acc329ad661f346de9e851cc19511768f',1,'definitions.h']]],
   ['coglink_5frouterplanner_5fnot_5fset_14',['COGLINK_ROUTERPLANNER_NOT_SET',['../definitions_8h.html#a2ea145494d47b462b3d89be0e68e16ef',1,'definitions.h']]],
   ['coglink_5fstop_15',['COGLINK_STOP',['../definitions_8h.html#a56b903107dec1fb1de655add329e500a',1,'definitions.h']]],
-  ['coglink_5fsuccess_16',['COGLINK_SUCCESS',['../definitions_8h.html#a8ee48555d8f62c4f1e848570afce9776',1,'definitions.h']]]
+  ['coglink_5fsuccess_16',['COGLINK_SUCCESS',['../definitions_8h.html#a8ee48555d8f62c4f1e848570afce9776',1,'definitions.h']]],
+  ['coglink_5ftablec_5fnot_5ffound_17',['COGLINK_TABLEC_NOT_FOUND',['../definitions_8h.html#a247f1fd9d45708e0d5b4eb2bed81cb8f',1,'definitions.h']]]
 ];
