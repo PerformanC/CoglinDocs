@@ -28,8 +28,7 @@ var menudata={children:[
 {text:"File List",url:"files.html"},
 {text:"Globals",url:"globals.html",children:[
 {text:"All",url:"globals.html",children:[
-{text:"c",url:"globals.html#index_c"},
-{text:"f",url:"globals.html#index_f"}]},
+{text:"c",url:"globals.html#index_c"}]},
 {text:"Functions",url:"globals_func.html",children:[
 {text:"c",url:"globals_func.html#index_c"}]},
 {text:"Macros",url:"globals_defs.html"}]}]}]}

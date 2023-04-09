@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['player_2eh_0',['player.h',['../player_8h.html',1,'']]],
-  ['plugins_2eh_1',['plugins.h',['../plugins_8h.html',1,'']]]
+  ['track_2eh_0',['track.h',['../track_8h.html',1,'']]]
 ];

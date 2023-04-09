@@ -1,9 +1,9 @@
 var indexSectionsWithContent =
 {
-  0: "cdfilnpt",
+  0: "cdilnpt",
   1: "dilnpt",
   2: "c",
-  3: "cf",
+  3: "c",
   4: "c"
 };
 
