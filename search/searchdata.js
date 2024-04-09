@@ -1,10 +1,9 @@
 var indexSectionsWithContent =
 {
-  0: "cdilnpt",
-  1: "dilnpt",
+  0: "celrw",
+  1: "elrw",
   2: "c",
-  3: "c",
-  4: "c"
+  3: "c"
 };
 
 var indexSectionNames =
@@ -12,8 +11,7 @@ var indexSectionNames =
   0: "all",
   1: "files",
   2: "functions",
-  3: "defines",
-  4: "pages"
+  3: "pages"
 };
 
 var indexSectionLabels =
@@ -21,7 +19,6 @@ var indexSectionLabels =
   0: "All",
   1: "Files",
   2: "Functions",
-  3: "Macros",
-  4: "Pages"
+  3: "Pages"
 };
 

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Coglink: include/lavalink.h File Reference</title>
+<title>CogLink: include/lavalink.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Coglink<span id="projectnumber">&#160;v1.7.0</span>
+   <div id="projectname">CogLink<span id="projectnumber">&#160;v3.0.0</span>
    </div>
   </td>
  </tr>
@@ -66,366 +66,25 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">lavalink.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;concord/websockets.h&gt;</code><br />
-<code>#include &lt;coglink/plugins.h&gt;</code><br />
-<code>#include &lt;coglink/definitions.h&gt;</code><br />
+
+<p>Lavalink and NodeLink client main header.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &lt;concord/types.h&gt;</code><br />
+<code>#include &lt;concord/websockets.h&gt;</code><br />
+<code>#include &lt;concord/discord.h&gt;</code><br />
+<code>#include &quot;types.h&quot;</code><br />
+<code>#include &quot;codecs.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="websocket_8h_source.html">websocket.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="events_8h_source.html">events.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rest_8h_source.html">rest.h</a>&quot;</code><br />
 </div>
 <p><a href="lavalink_8h_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a51b4453ab4a8d38fb990a4dee0b38594"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lavalink_8h.html#a51b4453ab4a8d38fb990a4dee0b38594">coglink_joinVoiceChannel</a> (struct coglink_lavaInfo *lavaInfo, struct discord *client, u64snowflake voiceChannelId, u64snowflake guildId)</td></tr>
-<tr class="separator:a51b4453ab4a8d38fb990a4dee0b38594"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8af236e960e9b3a43ecc2b7cc73e63b1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lavalink_8h.html#a8af236e960e9b3a43ecc2b7cc73e63b1">coglink_joinUserVoiceChannel</a> (struct coglink_lavaInfo *lavaInfo, struct discord *client, u64snowflake userId, u64snowflake guildId)</td></tr>
-<tr class="separator:a8af236e960e9b3a43ecc2b7cc73e63b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac276b59defe378d9ba0d0a79cbd0b3bf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lavalink_8h.html#ac276b59defe378d9ba0d0a79cbd0b3bf">coglink_getUserVoiceChannel</a> (struct coglink_lavaInfo *lavaInfo, u64snowflake userId, char channelId[], int channelIdSize)</td></tr>
-<tr class="separator:ac276b59defe378d9ba0d0a79cbd0b3bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a252b81e71c4f18aeb97d156c3f211cbe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lavalink_8h.html#a252b81e71c4f18aeb97d156c3f211cbe">coglink_freeNodeInfo</a> (struct coglink_lavaInfo *lavaInfo)</td></tr>
-<tr class="separator:a252b81e71c4f18aeb97d156c3f211cbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54d1aee32f3948998bc5e736de982e72"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lavalink_8h.html#a54d1aee32f3948998bc5e736de982e72">coglink_disconnectNode</a> (struct coglink_lavaInfo *lavaInfo, int nodePos)</td></tr>
-<tr class="separator:a54d1aee32f3948998bc5e736de982e72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a728f60e0cb8086a4ef5d8f035961aee1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lavalink_8h.html#a728f60e0cb8086a4ef5d8f035961aee1">coglink_setEvents</a> (struct coglink_lavaInfo *lavaInfo, struct coglink_lavalinkEvents *lavalinkEvents)</td></tr>
-<tr class="separator:a728f60e0cb8086a4ef5d8f035961aee1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a877d08320b177064f1a33360b54179da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lavalink_8h.html#a877d08320b177064f1a33360b54179da">coglink_connectNodeCleanup</a> (struct coglink_lavaInfo *lavaInfo, struct discord *client)</td></tr>
-<tr class="separator:a877d08320b177064f1a33360b54179da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1364191195b4b36659b1e38ed3d3808f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lavalink_8h.html#a1364191195b4b36659b1e38ed3d3808f">coglink_connectNode</a> (struct coglink_lavaInfo *lavaInfo, struct discord *client, struct coglink_lavalinkNodes *nodesArr, struct coglink_nodeInfo nodesBuf[])</td></tr>
-<tr class="separator:a1364191195b4b36659b1e38ed3d3808f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >File containing the Lavalink WebSocket related functions. </p>
-</div><h2 class="groupheader">Function Documentation</h2>
-<a id="a1364191195b4b36659b1e38ed3d3808f" name="a1364191195b4b36659b1e38ed3d3808f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1364191195b4b36659b1e38ed3d3808f">&#9670;&nbsp;</a></span>coglink_connectNode()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int coglink_connectNode </td>
-          <td>(</td>
-          <td class="paramtype">struct coglink_lavaInfo *&#160;</td>
-          <td class="paramname"><em>lavaInfo</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">struct discord *&#160;</td>
-          <td class="paramname"><em>client</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">struct coglink_lavalinkNodes *&#160;</td>
-          <td class="paramname"><em>nodesArr</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">struct coglink_nodeInfo&#160;</td>
-          <td class="paramname"><em>nodesBuf</em>[]&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p >Creates a WebSocket connecting with the Lavalink node. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">lavaInfo</td><td>Structure with important informations of the Lavalink. </td></tr>
-    <tr><td class="paramname">client</td><td>Concord's client stucture generated with discord_init. </td></tr>
-    <tr><td class="paramname">nodesArr</td><td>Structure with all Lavalink nodes information. </td></tr>
-    <tr><td class="paramname">nodesBuf</td><td>Structure buffer to be used internally for store the nodes informations. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>COGLINK_SUCCESS </dd></dl>
-
-</div>
-</div>
-<a id="a877d08320b177064f1a33360b54179da" name="a877d08320b177064f1a33360b54179da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a877d08320b177064f1a33360b54179da">&#9670;&nbsp;</a></span>coglink_connectNodeCleanup()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void coglink_connectNodeCleanup </td>
-          <td>(</td>
-          <td class="paramtype">struct coglink_lavaInfo *&#160;</td>
-          <td class="paramname"><em>lavaInfo</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">struct discord *&#160;</td>
-          <td class="paramname"><em>client</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p >Frees all mallocs used while connecting to a node and in other functions. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">lavaInfo</td><td>Structure with important informations of the Lavalink. </td></tr>
-    <tr><td class="paramname">client</td><td>Concord's client stucture generated with discord_init. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a54d1aee32f3948998bc5e736de982e72" name="a54d1aee32f3948998bc5e736de982e72"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a54d1aee32f3948998bc5e736de982e72">&#9670;&nbsp;</a></span>coglink_disconnectNode()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void coglink_disconnectNode </td>
-          <td>(</td>
-          <td class="paramtype">struct coglink_lavaInfo *&#160;</td>
-          <td class="paramname"><em>lavaInfo</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>nodePos</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p >Closes the WebSocket connection with the Lavalink node. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">lavaInfo</td><td>Structure with important informations of the Lavalink. </td></tr>
-    <tr><td class="paramname">nodePos</td><td>Position of the node in the nodes array. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a252b81e71c4f18aeb97d156c3f211cbe" name="a252b81e71c4f18aeb97d156c3f211cbe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a252b81e71c4f18aeb97d156c3f211cbe">&#9670;&nbsp;</a></span>coglink_freeNodeInfo()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void coglink_freeNodeInfo </td>
-          <td>(</td>
-          <td class="paramtype">struct coglink_lavaInfo *&#160;</td>
-          <td class="paramname"><em>lavaInfo</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p >Removes all information in the lavaInfo struct </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">lavaInfo</td><td>Structure with important informations of the Lavalink. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ac276b59defe378d9ba0d0a79cbd0b3bf" name="ac276b59defe378d9ba0d0a79cbd0b3bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac276b59defe378d9ba0d0a79cbd0b3bf">&#9670;&nbsp;</a></span>coglink_getUserVoiceChannel()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int coglink_getUserVoiceChannel </td>
-          <td>(</td>
-          <td class="paramtype">struct coglink_lavaInfo *&#160;</td>
-          <td class="paramname"><em>lavaInfo</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">u64snowflake&#160;</td>
-          <td class="paramname"><em>userId</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>channelId</em>[], </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>channelIdSize</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p >Retrieves the voice channel that a user is in, must have the optional settings enabled for it. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">lavaInfo</td><td>Structure with important informations of the Lavalink. </td></tr>
-    <tr><td class="paramname">userId</td><td>ID of the user that the bot will join in its voice channel. </td></tr>
-    <tr><td class="paramname">channelId</td><td>Pointer to a char pointer that will be filled with the voice channel ID. </td></tr>
-    <tr><td class="paramname">channelIdSize</td><td>Size of the char pointer that will be filled with the voice channel ID. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a8af236e960e9b3a43ecc2b7cc73e63b1" name="a8af236e960e9b3a43ecc2b7cc73e63b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8af236e960e9b3a43ecc2b7cc73e63b1">&#9670;&nbsp;</a></span>coglink_joinUserVoiceChannel()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int coglink_joinUserVoiceChannel </td>
-          <td>(</td>
-          <td class="paramtype">struct coglink_lavaInfo *&#160;</td>
-          <td class="paramname"><em>lavaInfo</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">struct discord *&#160;</td>
-          <td class="paramname"><em>client</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">u64snowflake&#160;</td>
-          <td class="paramname"><em>userId</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">u64snowflake&#160;</td>
-          <td class="paramname"><em>guildId</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p >Joins a voice channel that a user is in, must have the optional settings enabled for it. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">lavaInfo</td><td>Structure with important informations of the Lavalink. </td></tr>
-    <tr><td class="paramname">client</td><td>Concord's client stucture generated with discord_init. </td></tr>
-    <tr><td class="paramname">userId</td><td>ID of the user that the bot will join in its voice channel. </td></tr>
-    <tr><td class="paramname">guildId</td><td>ID of the guild of the voice channel that the bot will join. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a51b4453ab4a8d38fb990a4dee0b38594" name="a51b4453ab4a8d38fb990a4dee0b38594"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a51b4453ab4a8d38fb990a4dee0b38594">&#9670;&nbsp;</a></span>coglink_joinVoiceChannel()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int coglink_joinVoiceChannel </td>
-          <td>(</td>
-          <td class="paramtype">struct coglink_lavaInfo *&#160;</td>
-          <td class="paramname"><em>lavaInfo</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">struct discord *&#160;</td>
-          <td class="paramname"><em>client</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">u64snowflake&#160;</td>
-          <td class="paramname"><em>voiceChannelId</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">u64snowflake&#160;</td>
-          <td class="paramname"><em>guildId</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p >Joins a voice channel. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">lavaInfo</td><td>Structure with important informations of the Lavalink. </td></tr>
-    <tr><td class="paramname">client</td><td>Concord's client stucture generated with discord_init. </td></tr>
-    <tr><td class="paramname">voiceChannelId</td><td>ID of the voice channel that the bot will join. </td></tr>
-    <tr><td class="paramname">guildId</td><td>ID of the guild of the voice channel that the bot will join. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a728f60e0cb8086a4ef5d8f035961aee1" name="a728f60e0cb8086a4ef5d8f035961aee1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a728f60e0cb8086a4ef5d8f035961aee1">&#9670;&nbsp;</a></span>coglink_setEvents()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void coglink_setEvents </td>
-          <td>(</td>
-          <td class="paramtype">struct coglink_lavaInfo *&#160;</td>
-          <td class="paramname"><em>lavaInfo</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">struct coglink_lavalinkEvents *&#160;</td>
-          <td class="paramname"><em>lavalinkEvents</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p >Sets the Lavalink events when not including it directly into lavaInfo structure. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">lavaInfo</td><td>Structure with important informations of the Lavalink. </td></tr>
-    <tr><td class="paramname">lavalinkEvents</td><td>Lavalink event's structure with all pointers to the functions that will be executed when the event it emitted. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-</div><!-- contents -->
+<div class="textblock"><p >Lavalink and NodeLink client main header. </p>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4

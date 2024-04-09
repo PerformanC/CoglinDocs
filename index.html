@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Coglink: Coglink</title>
+<title>CogLink: CogLink</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Coglink<span id="projectnumber">&#160;v1.7.0</span>
+   <div id="projectname">CogLink<span id="projectnumber">&#160;v3.0.0</span>
    </div>
   </td>
  </tr>
@@ -62,119 +62,69 @@ $(function() {
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">Coglink </div></div>
+  <div class="headertitle"><div class="title">CogLink </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p ><a class="anchor" id="md_README"></a> <a href="https://discord.gg/YcaK3puy49"><img src="https://img.shields.io/discord/1036045973039890522?color=5865F2&amp;logo=discord&amp;logoColor=white" alt="Discord Server" class="inline"/></a> <a href="https://www.codacy.com/gh/ThePedroo/Coglink/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ThePedroo/Coglink&amp;utm_campaign=Badge_Grade"><img src="https://app.codacy.com/project/badge/Grade/acbabb99b4354f5ab182e511dd35aee4" alt="Codacy Badge" class="inline"/></a></p>
-<p ><img src="guides/images//CoglinkLogo.png" alt="Coglink logo" title="Coglink logo" class="inline"/></p>
-<p >Coglink, the C Lavalink client, with the most performance above all Lavalink wrappers.</p>
+<div class="textblock"><p ><a class="anchor" id="md_README"></a> A Concord (C99) LavaLink/NodeLink client.</p>
 <h1><a class="anchor" id="autotoc_md1"></a>
-About</h1>
-<p >Coglink is a C99 Lavalink client, which has full coverage of Lavalink API, allowing easy low-level control of LavaLink.</p>
-<p >Made to be portable, Coglink is the least resource-consuming client, allowing you to run easily anywhere. (It can use less than 10MB of RAM)</p>
+Features</h1>
+<ul>
+<li>C99 compatible</li>
+<li>Low memory usage (&gt; 5MB of RAM a working bot)</li>
+<li>Portable</li>
+</ul>
 <h1><a class="anchor" id="autotoc_md2"></a>
-Why?</h1>
-<p >One of the main purposes of Coglink is to be the most performant LavaLink client, while still being light-weight and portable, especially with a low overhead.</p>
-<p >In comparison with other NodeJs clients, even against FastLink, Coglink is way more portable, which makes it a good option for big bots, which needs to have the least resource consumption possible.</p>
-<p >Coglink is from PerformanC, and our missions is to make our softwares stable enough that it could survive months without issues, and while this is hard for a big project, we are trying to make it possible, which for now, it's working.</p>
-<p >Performance, stability and portability, that's what Coglink is about.</p>
-<h1><a class="anchor" id="autotoc_md3"></a>
-Stability</h1>
-<p >Stability on this branch cannot be confirmed, LavaLink v4 is still in development with some pending features to be added.</p>
-<p >While this branch is more stable than the main, LavaLink is not, so be aware when using this branch.</p>
-<p ><em>If marked, considered stable, if not, bugs may be found.</em></p>
-<ul>
-<li>[x] Search (Highly stable)</li>
-<li>[x] loadType/track/playlist/error parsing (loadType/track highly stable)</li>
-<li>[x] Play (Highly stable)</li>
-<li>[x] Join voice channel (Highly stable)</li>
-<li>[x] All cleanups (Highly stable)</li>
-<li>[x] DecodeTrack(s) &amp; ParseTrack(s)</li>
-<li>[x] Parse track, pause track, stop track, seek track, set volume</li>
-<li>[x] Set filter</li>
-<li>[x] Get Players &amp; parse get Players</li>
-<li>[x] Get/parse Info</li>
-<li>[ ] Get/parse RouterPlanner</li>
-<li>[x] Get/parse Lavalink Stats (Event included)</li>
-<li>[x] Get Lavalink Version</li>
-<li>[x] Connect/disconnect Node (Highly stable)</li>
-<li>[x] Set event (Highly stable)</li>
-<li>[x] Websocket (<b>Known bugs with close event</b>)</li>
-<li>[x] IO poller (Highly stable)</li>
-</ul>
-<h1><a class="anchor" id="autotoc_md4"></a>
-Compiling</h1>
-<p >Before starting, you will need to install the required libraries for Coglink, this can be done by the package manager of your OS, you will need to install the mentioned libraries below:</p>
-<div class="fragment"><div class="line">make clang git</div>
-</div><!-- fragment --><p ><b>Warning</b>: Remember that their names can change depending on your OS.</p>
-<p >After installing the libraries, you will need to <a href="https://github.com/Cogmasters/concord">compile Concord</a>.</p>
-<p >After compiling Concord, you can proceed with the installation of Coglink, first, we will need to clone the repository:</p>
-<div class="fragment"><div class="line">$ git clone https://github.com/PerformanC/Coglink</div>
-</div><!-- fragment --><p >When the repository is cloned, enter in the folder and run the <code>make</code> command, this will generate the header files, which will be used to compile Coglink, and after it, install into the system.</p>
-<div class="fragment"><div class="line"># cd Coglink &amp;&amp; make &amp;&amp; make install</div>
-</div><!-- fragment --><p ><b>Warning</b>: When compiling your bot, remember to use the <code>-lcoglink</code> flag.</p>
-<h1><a class="anchor" id="autotoc_md5"></a>
-Using</h1>
-<p >See below the purpose of Coglink header files:</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;coglink/lavalink.h&gt;</span> <span class="comment">// Websocket related Coglink functions</span></div>
-<div class="line"><span class="preprocessor">#include &lt;coglink/definitions.h&gt;</span> <span class="comment">// File with the definitions of macros, like COGLINK_SUCCESS</span></div>
-<div class="line"><span class="preprocessor">#include &lt;coglink/information.h&gt;</span> <span class="comment">// Functions which get information from Lavalink</span></div>
-<div class="line"><span class="preprocessor">#include &lt;coglink/network.h&gt;</span> <span class="comment">// Functions related to network, like the router planner</span></div>
-<div class="line"><span class="preprocessor">#include &lt;coglink/player.h&gt;</span> <span class="comment">// The functions related to the music player</span></div>
-<div class="line"><span class="preprocessor">#include &lt;coglink/plugins.h&gt;</span> <span class="comment">// For the use of plugins</span></div>
-<div class="line"><span class="preprocessor">#include &lt;coglink/track.h&gt;</span> <span class="comment">// Functions related to tracks, like decoding, searching, etc</span></div>
-</div><!-- fragment --><p >As for the usage, you can see the <code>guides/example</code> folder, with a complete example of Coglink usage.</p>
-<h1><a class="anchor" id="autotoc_md6"></a>
-Documentation</h1>
-<p >You can see <a href="https://performanc.github.io/CoglinDocs/">here</a> the documentation for Coglink, made with Doxygen.</p>
-<p >In case you want to build the documentation yourself, you can use the <code>make gen_docs</code> command, but be sure that you have Doxygen installed.</p>
-<h1><a class="anchor" id="autotoc_md7"></a>
-Coglink plugins</h1>
-<p >For most functions, Coglink allows plugins to interfere with it, allowing the community to add more features to Coglink, without the need to modify the source code, but for the protection of the users, Coglink has some security measures to avoid malicious plugins.</p>
-<p >The security measures are:</p>
-<ul>
-<li>Plugins are not allowed to change the members of the struct <code>lavaInfo</code>/<code>client</code></li>
-<li>Concord's client struct has hidden members (OPTIONAL)</li>
-<li>Plugins are not allowed to read neither the bot token nor the Concord websocket struct by default.</li>
-</ul>
-<h2><a class="anchor" id="autotoc_md8"></a>
-Setting up a plugin</h2>
-<p >Plugins can't straight ahead work in Coglink, you need to pass the functions to Coglink from the plugin, so it can execute when some function from Coglink is used, see the function below that allow this to happen:</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;coglink/plugins.h&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;somePlugin.h&quot;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">struct </span>coglink_pluginEvents event = {</div>
-<div class="line">  .onSearchRequest = &amp;functionToBeExecuted</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><a class="code hl_function" href="plugins_8h.html#a70633102fff3e6a3d372290012185d61">coglink_setPluginEvents</a>(&amp;lavaInfo, &amp;event);</div>
-<div class="ttc" id="aplugins_8h_html_a70633102fff3e6a3d372290012185d61"><div class="ttname"><a href="plugins_8h.html#a70633102fff3e6a3d372290012185d61">coglink_setPluginEvents</a></div><div class="ttdeci">void coglink_setPluginEvents(struct coglink_lavaInfo *lavaInfo, struct coglink_pluginEvents *pluginEvents)</div></div>
-</div><!-- fragment --><p >Done, now when the function coglink_searchSong is executed, this will be executed first before Coglink processes it.</p>
-<p ><b>Warning</b>: The first plugins have the priority, so if you want to make a plugin that will be executed first, you will need to set it first.</p>
-<h1><a class="anchor" id="autotoc_md9"></a>
-Plugin list</h1>
-<p >For now, there are no plugins for Coglink, but if you want to make one, you can see the Setting up a plugin section, and after it, you can add it to the list below.</p>
-<h1><a class="anchor" id="autotoc_md10"></a>
-Support</h1>
-<p >In case of any issue using it (except bugs, that should be reported on GitHub Issues), you are free to ask on PerformanC's <a href="https://discord.gg/uPveNfTuCJ">Discord server</a>.</p>
-<h1><a class="anchor" id="autotoc_md11"></a>
-Credits</h1>
-<p >Although Coglink is made only by one person, many people contributed to it, thanks <a href="https://discord.gg/YcaK3puy49">Cogmaster</a> members for this. And special thanks to <code>müller#1001</code>, without you, we wouldn't be here.</p>
-<p >Some people that helped on Coglink related things:</p>
-<ul>
-<li>müller</li>
-<li>HackerSmacker</li>
-<li>Goo</li>
-</ul>
-<p >Thanks you all for the help! ^^</p>
-<h1><a class="anchor" id="autotoc_md12"></a>
 Dependencies</h1>
 <ul>
-<li><code>libcurl</code> &gt;= 7.56.1</li>
-<li><code>Concord (master/dev)</code> 2.2.0</li>
-<li><code>jsmn-find</code> latest (included on Concord 2.2.0)</li>
-<li><code>jsmn</code> latest (included on Concord 2.2.0)</li>
-<li><code>tablec</code> v2.2.3 (Open-addressing) </li>
+<li><a href="https://github.com/Cogmasters/Concord"><code>Concord</code></a></li>
+</ul>
+<blockquote class="doxtable">
+<p >&zwj;[!NOTE] CogLink only relies on dependencies already included in Concord. </p>
+</blockquote>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Installation</h1>
+<h2><a class="anchor" id="autotoc_md4"></a>
+1. Install Concord</h2>
+<p >The installation guide for Concord can be found <a href="https://github.com/Cogmasters/concord?tab=readme-ov-file#build-instructions">in their repository</a>.</p>
+<h2><a class="anchor" id="autotoc_md5"></a>
+2. Clone the repository</h2>
+<div class="fragment"><div class="line">$ git clone https://github.com/PerformanC/CogLink</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md6"></a>
+3. Compile</h2>
+<div class="fragment"><div class="line">$ cd CogLink</div>
+<div class="line">$ make -j4</div>
+</div><!-- fragment --><blockquote class="doxtable">
+<p >&zwj;[!NOTE] The <code>-j4</code> flag is optional, but it will speed up the compilation process. The number after <code>-j</code> is the number of threads to use for compilation. </p>
+</blockquote>
+<h2><a class="anchor" id="autotoc_md7"></a>
+4. Install</h2>
+<div class="fragment"><div class="line">$ sudo make install</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md8"></a>
+Usage</h1>
+<p >... TODO</p>
+<h1><a class="anchor" id="autotoc_md9"></a>
+Documentation</h1>
+<p ><a href="https://performanc.github.io/CoglinDocs/">CogLink documentation</a> is made with Doxygen, hosted on GitHub Pages.</p>
+<p >The documentation can be built with the following command:</p>
+<div class="fragment"><div class="line">$ make gen_docs</div>
+</div><!-- fragment --><blockquote class="doxtable">
+<p >&zwj;[!NOTE] Doxygen is required to build the documentation. </p>
+</blockquote>
+<h1><a class="anchor" id="autotoc_md10"></a>
+Support</h1>
+<p >Any question or issue related to CogLink or other PerformanC projects can be can be made in <a href="https://discord.gg/uPveNfTuCJ">PerformanC's Discord server</a>.</p>
+<p >For verified issues, please also create a GitHub issue for tracking the issue.</p>
+<h1><a class="anchor" id="autotoc_md11"></a>
+Contributing</h1>
+<p >CogLink follows the PerformanC's <a href="https://github.com/PerformanC/contributing">contribution guidelines</a>. It is necessary to follow the guidelines to contribute to CogLink and other PerformanC projects.</p>
+<h1><a class="anchor" id="autotoc_md12"></a>
+Projects using CogLink</h1>
+<p >None known yet, but if you are using CogLink, please let us know in <a href="https://discord.gg/uPveNfTuCJ">PerformanC's Discord server</a> and we will add your project here.</p>
+<h1><a class="anchor" id="autotoc_md13"></a>
+License</h1>
+<p >CogLink is licensed under [BSD 2-Clause License](LICENSE). You can read more about it on <a href="https://opensource.org/licenses/BSD-2-Clause">Open Source Initiative</a>.</p>
+<ul>
+<li>This project uses the latest standards of The PerformanC Organization. </li>
 </ul>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->

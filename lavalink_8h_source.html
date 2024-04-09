@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Coglink: include/lavalink.h Source File</title>
+<title>CogLink: include/lavalink.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Coglink<span id="projectnumber">&#160;v1.7.0</span>
+   <div id="projectname">CogLink<span id="projectnumber">&#160;v3.0.0</span>
    </div>
   </td>
  </tr>
@@ -70,196 +70,60 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="lavalink_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#ifndef LAVALINK_H</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#define LAVALINK_H</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;concord/websockets.h&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;coglink/plugins.h&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;coglink/definitions.h&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifndef COGLINK_LAVALINK_H</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#define COGLINK_LAVALINK_H</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;concord/types.h&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;concord/websockets.h&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;concord/discord.h&gt;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">struct </span>coglink_requestInformation {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  <span class="keywordtype">char</span> *body;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  <span class="keywordtype">size_t</span> size;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>};</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">struct </span>coglink_parsedTrack {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <span class="keywordtype">char</span> encoded[COGLINK_TRACK_LENGTH];</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="keywordtype">char</span> identifier[COGLINK_IDENTIFIER_LENGTH];</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <span class="keywordtype">char</span> isSeekable[COGLINK_TRUE_FALSE_LENGTH];</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <span class="keywordtype">char</span> author[COGLINK_AUTHOR_NAME_LENGTH];</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <span class="keywordtype">char</span> length[COGLINK_VIDEO_LENGTH];</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <span class="keywordtype">char</span> isStream[COGLINK_TRUE_FALSE_LENGTH];</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="keywordtype">char</span> position[COGLINK_VIDEO_LENGTH];</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="keywordtype">char</span> title[COGLINK_TRACK_TITLE_LENGTH];</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <span class="keywordtype">char</span> uri[COGLINK_URL_LENGTH];</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <span class="keywordtype">char</span> isrc[64];</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <span class="keywordtype">char</span> artworkUrl[256];</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  <span class="keywordtype">char</span> sourceName[COGLINK_SOURCENAME_LENGTH];</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>};</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">struct </span>coglink_parsedPlaylist {</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="keywordtype">char</span> name[COGLINK_PLAYLIST_NAME_LENGTH];</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keywordtype">char</span> selectedTrack[8];</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>};</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">struct </span>coglink_parsedError {</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keywordtype">char</span> message[128];</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="keywordtype">char</span> severity[16];</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>};</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">struct </span>coglink_lavalinkStatsMemory {</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keywordtype">char</span> free[16];</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="keywordtype">char</span> used[16];</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="keywordtype">char</span> allocated[16];</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keywordtype">char</span> reservable[16];</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>};</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keyword">struct </span>coglink_lavalinkStatsFrameStats {</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keywordtype">char</span> sent[16];</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="keywordtype">char</span> deficit[16];</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="keywordtype">char</span> nulled[16];</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>};</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;types.h&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">struct </span>coglink_node {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <span class="comment">/* Params */</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <span class="keywordtype">char</span> *name;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <span class="keywordtype">char</span> *hostname;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <span class="keywordtype">int</span> port;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="keywordtype">char</span> *password;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <span class="keywordtype">bool</span> ssl;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <span class="comment">/* Public info */</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <span class="keywordtype">char</span> *session_id;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <span class="keyword">struct </span>coglink_stats *stats;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="comment">/* Internal */</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  uint64_t tstamp;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  CURLM *mhandle;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <span class="keyword">struct </span>websockets *ws;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <span class="keyword">struct </span>_coglink_websocket_data *ws_data;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>};</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">struct </span>coglink_nodes {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <span class="keyword">struct </span>coglink_node *array;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="keywordtype">size_t</span> size;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>};</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">struct </span>coglink_client {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="comment">/* Params */</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  u64snowflake bot_id;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="keywordtype">char</span> *num_shards;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keyword">struct </span>coglink_events *events;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="comment">/* Public info */</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="keyword">struct </span>coglink_nodes *nodes;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keyword">struct </span>coglink_players *players;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="keyword">struct </span>coglink_users *users;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="comment">/* Internal (passed options) */</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keywordtype">bool</span> allow_resuming;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keywordtype">bool</span> allow_caching_voice_channel_ids;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>};</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#include &quot;codecs.h&quot;</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#include &quot;<a class="code" href="websocket_8h.html">websocket.h</a>&quot;</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#include &quot;<a class="code" href="events_8h.html">events.h</a>&quot;</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#include &quot;<a class="code" href="rest_8h.html">rest.h</a>&quot;</span></div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keyword">struct </span>coglink_lavalinkStatsCPU {</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keywordtype">char</span> cores[8];</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="keywordtype">char</span> systemLoad[16];</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keywordtype">char</span> lavalinkLoad[16];</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>};</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keyword">struct </span>coglink_lavalinkStats {</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="keywordtype">char</span> players[8];</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <span class="keywordtype">char</span> playingPlayers[8];</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <span class="keywordtype">char</span> uptime[32];</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  <span class="keyword">struct </span>coglink_lavalinkStatsMemory *memory;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <span class="keyword">struct </span>coglink_lavalinkStatsCPU *cpu;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <span class="keyword">struct </span>coglink_lavalinkStatsFrameStats *frameStats;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>};</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="keyword">struct </span>coglink_coglinkDebugging {</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <span class="keywordtype">int</span> allDebugging;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <span class="keywordtype">int</span> sendPayloadErrorsDebugging;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <span class="keywordtype">int</span> sendPayloadSuccessDebugging;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <span class="keywordtype">int</span> checkParseErrorsDebugging;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keywordtype">int</span> checkParseSuccessDebugging;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <span class="keywordtype">int</span> joinVoiceDebugging;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <span class="keywordtype">int</span> jsmnfErrorsDebugging;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <span class="keywordtype">int</span> jsmnfSuccessDebugging;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <span class="keywordtype">int</span> handleSchedulerVoiceStateDebugging;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  <span class="keywordtype">int</span> handleSchedulerVoiceServerDebugging;</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  <span class="keywordtype">int</span> joinUserVoiceChannelDebugging;</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <span class="keywordtype">int</span> tablecErrorsDebugging;</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="keywordtype">int</span> tablecSuccessDebugging;</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  <span class="keywordtype">int</span> parseTrackErrorsDebugging;</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  <span class="keywordtype">int</span> parseTrackSuccessDebugging;</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <span class="keywordtype">int</span> parsePlaylistErrorsDebugging;</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  <span class="keywordtype">int</span> parsePlaylistSuccessDebugging;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  <span class="keywordtype">int</span> parseErrorsDebugging;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  <span class="keywordtype">int</span> parseSuccessDebugging;</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  <span class="keywordtype">int</span> parseLoadtypeErrorsDebugging;</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  <span class="keywordtype">int</span> parseLoadtypeSuccessDebugging;</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  <span class="keywordtype">int</span> searchSongErrorsDebugging;</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  <span class="keywordtype">int</span> searchSongSuccessDebugging;</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  <span class="keywordtype">int</span> curlErrorsDebugging;</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  <span class="keywordtype">int</span> curlSuccessDebugging;</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  <span class="keywordtype">int</span> memoryDebugging;</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>};</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="keyword">struct </span>coglink_lavalinkEvents {</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  int (*onRaw)(<span class="keyword">struct </span>coglink_lavaInfo *lavaInfo, <span class="keyword">const</span> <span class="keywordtype">char</span> *data, <span class="keywordtype">size_t</span> length);</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  void (*onConnect)(<span class="keywordtype">char</span> *sessionId);</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  void (*onClose)(<span class="keyword">enum</span> ws_close_reason wscode, <span class="keyword">const</span> <span class="keywordtype">char</span> *reason);</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  void (*onTrackStart)(<span class="keywordtype">char</span> *guildId, <span class="keyword">struct </span>coglink_parsedTrack *track);</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  void (*onTrackEnd)(<span class="keywordtype">char</span> *guildId, <span class="keyword">struct </span>coglink_parsedTrack *track, <span class="keywordtype">char</span> *reason);</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  void (*onTrackException)(<span class="keywordtype">char</span> *guildId, <span class="keyword">struct </span>coglink_parsedTrack *track, <span class="keywordtype">char</span> *message, <span class="keywordtype">char</span> *severity, <span class="keywordtype">char</span> *cause);</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  void (*onTrackStuck)(<span class="keywordtype">char</span> *guildId, <span class="keywordtype">char</span> *thresholdMs, <span class="keyword">struct </span>coglink_parsedTrack *track);</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  void (*onWebSocketClosed)(<span class="keywordtype">char</span> *guildId, <span class="keywordtype">char</span> *code, <span class="keywordtype">char</span> *reason, <span class="keywordtype">int</span> byRemote);</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  void (*onUnknownEvent)(<span class="keywordtype">char</span> *guildId, <span class="keywordtype">char</span> *type, <span class="keyword">const</span> <span class="keywordtype">char</span> *text);</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  void (*onPlayerUpdate)(<span class="keywordtype">char</span> *guildId, <span class="keywordtype">char</span> *time, <span class="keywordtype">char</span> *position, <span class="keywordtype">int</span> connected, <span class="keywordtype">char</span> *ping);</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  void (*onStats)(<span class="keyword">struct </span>coglink_lavalinkStats *stats);</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  void (*onUnknownOp)(<span class="keywordtype">char</span> *op, <span class="keyword">const</span> <span class="keywordtype">char</span> *text);</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>};</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="keyword">struct </span>_coglink_nodeStats {</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  <span class="keywordtype">int</span> cores;</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  <span class="keywordtype">double</span> systemLoad;</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>};</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="keyword">struct </span>coglink_lavalinkNode {</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  <span class="keywordtype">char</span> *name;</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  <span class="keywordtype">char</span> *hostname;</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  <span class="keywordtype">char</span> *password;</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>  <span class="keywordtype">int</span> ssl;</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>};</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="keyword">struct </span>coglink_lavalinkNodes {</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>  <span class="keyword">struct </span>coglink_lavalinkNode *nodes;</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  <span class="keywordtype">int</span> size;</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>};</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="keyword">struct </span>coglink_nodeInfo {</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>  <span class="keyword">struct </span>websockets *ws;</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>  <span class="keyword">struct </span>coglink_lavalinkNode node;</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>  <span class="keyword">struct </span>_coglink_nodeStats stats;</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>  <span class="keywordtype">char</span> sessionId[COGLINK_LAVALINK_SESSIONID_LENGTH];</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>  uint64_t tstamp;</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>  CURLM *mhandle;</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>};</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span><span class="keyword">struct </span>coglink_lavaInfo {</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>  <span class="keyword">struct </span>coglink_nodeInfo *nodes;</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>  <span class="keyword">struct </span>coglink_lavalinkEvents *events;</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>  <span class="keyword">struct </span>coglink_coglinkPlugins *plugins;</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>  <span class="keyword">struct </span>coglink_coglinkDebugging *debugging;</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>  <span class="keywordtype">char</span> *botId;</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>  <span class="keywordtype">char</span> *shards;</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>  <span class="keywordtype">int</span> nodeId;</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>  <span class="keywordtype">int</span> nodeCount;</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>  <span class="keywordtype">int</span> allowResuming;</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>  <span class="keywordtype">int</span> allowCachingVoiceChannelIds;</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>};</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="keyword">struct </span>coglink_voiceData {</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>  <span class="keywordtype">char</span> *token;</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>  <span class="keywordtype">char</span> *endpoint;</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>  <span class="keywordtype">char</span> *sessionId;</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>};</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><span class="keywordtype">void</span> _coglink_createPlayer(u64snowflake guildId, <span class="keywordtype">int</span> data);</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="keywordtype">int</span> _coglink_findPlayerNode(u64snowflake guildId);</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span><span class="keywordtype">void</span> onConnectEvent(<span class="keywordtype">void</span> *data, <span class="keyword">struct</span> websockets *ws, <span class="keyword">struct</span> ws_info *info, <span class="keyword">const</span> <span class="keywordtype">char</span> *protocols);</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span><span class="keywordtype">void</span> onCloseEvent(<span class="keywordtype">void</span> *data, <span class="keyword">struct</span> websockets *ws, <span class="keyword">struct</span> ws_info *info, <span class="keyword">enum</span> ws_close_reason wscode, <span class="keyword">const</span> <span class="keywordtype">char</span> *reason, <span class="keywordtype">size_t</span> len);</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span><span class="keywordtype">void</span> onTextEvent(<span class="keywordtype">void</span> *data, <span class="keyword">struct</span> websockets *ws, <span class="keyword">struct</span> ws_info *info, <span class="keyword">const</span> <span class="keywordtype">char</span> *text, <span class="keywordtype">size_t</span> len);</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno"><a class="line" href="lavalink_8h.html#a51b4453ab4a8d38fb990a4dee0b38594">  177</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="lavalink_8h.html#a51b4453ab4a8d38fb990a4dee0b38594">coglink_joinVoiceChannel</a>(<span class="keyword">struct</span> coglink_lavaInfo *lavaInfo, <span class="keyword">struct</span> discord *client, u64snowflake voiceChannelId, u64snowflake guildId);</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno"><a class="line" href="lavalink_8h.html#a8af236e960e9b3a43ecc2b7cc73e63b1">  186</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="lavalink_8h.html#a8af236e960e9b3a43ecc2b7cc73e63b1">coglink_joinUserVoiceChannel</a>(<span class="keyword">struct</span> coglink_lavaInfo *lavaInfo, <span class="keyword">struct</span> discord *client, u64snowflake userId, u64snowflake guildId);</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno"><a class="line" href="lavalink_8h.html#ac276b59defe378d9ba0d0a79cbd0b3bf">  195</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="lavalink_8h.html#ac276b59defe378d9ba0d0a79cbd0b3bf">coglink_getUserVoiceChannel</a>(<span class="keyword">struct</span> coglink_lavaInfo *lavaInfo, u64snowflake userId, <span class="keywordtype">char</span> channelId[], <span class="keywordtype">int</span> channelIdSize);</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno"><a class="line" href="lavalink_8h.html#a252b81e71c4f18aeb97d156c3f211cbe">  201</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="lavalink_8h.html#a252b81e71c4f18aeb97d156c3f211cbe">coglink_freeNodeInfo</a>(<span class="keyword">struct</span> coglink_lavaInfo *lavaInfo);</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span> </div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno"><a class="line" href="lavalink_8h.html#a54d1aee32f3948998bc5e736de982e72">  208</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="lavalink_8h.html#a54d1aee32f3948998bc5e736de982e72">coglink_disconnectNode</a>(<span class="keyword">struct</span> coglink_lavaInfo *lavaInfo, <span class="keywordtype">int</span> nodePos);</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span> </div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno"><a class="line" href="lavalink_8h.html#a728f60e0cb8086a4ef5d8f035961aee1">  215</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="lavalink_8h.html#a728f60e0cb8086a4ef5d8f035961aee1">coglink_setEvents</a>(<span class="keyword">struct</span> coglink_lavaInfo *lavaInfo, <span class="keyword">struct</span> coglink_lavalinkEvents *lavalinkEvents);</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span> </div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno"><a class="line" href="lavalink_8h.html#a877d08320b177064f1a33360b54179da">  222</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="lavalink_8h.html#a877d08320b177064f1a33360b54179da">coglink_connectNodeCleanup</a>(<span class="keyword">struct</span> coglink_lavaInfo *lavaInfo, <span class="keyword">struct</span> discord *client);</div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span> </div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno"><a class="line" href="lavalink_8h.html#a1364191195b4b36659b1e38ed3d3808f">  232</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="lavalink_8h.html#a1364191195b4b36659b1e38ed3d3808f">coglink_connectNode</a>(<span class="keyword">struct</span> coglink_lavaInfo *lavaInfo, <span class="keyword">struct</span> discord *client, <span class="keyword">struct</span> coglink_lavalinkNodes *nodesArr, <span class="keyword">struct</span> coglink_nodeInfo nodesBuf[]);</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span> </div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="alavalink_8h_html_a1364191195b4b36659b1e38ed3d3808f"><div class="ttname"><a href="lavalink_8h.html#a1364191195b4b36659b1e38ed3d3808f">coglink_connectNode</a></div><div class="ttdeci">int coglink_connectNode(struct coglink_lavaInfo *lavaInfo, struct discord *client, struct coglink_lavalinkNodes *nodesArr, struct coglink_nodeInfo nodesBuf[])</div></div>
-<div class="ttc" id="alavalink_8h_html_a252b81e71c4f18aeb97d156c3f211cbe"><div class="ttname"><a href="lavalink_8h.html#a252b81e71c4f18aeb97d156c3f211cbe">coglink_freeNodeInfo</a></div><div class="ttdeci">void coglink_freeNodeInfo(struct coglink_lavaInfo *lavaInfo)</div></div>
-<div class="ttc" id="alavalink_8h_html_a51b4453ab4a8d38fb990a4dee0b38594"><div class="ttname"><a href="lavalink_8h.html#a51b4453ab4a8d38fb990a4dee0b38594">coglink_joinVoiceChannel</a></div><div class="ttdeci">int coglink_joinVoiceChannel(struct coglink_lavaInfo *lavaInfo, struct discord *client, u64snowflake voiceChannelId, u64snowflake guildId)</div></div>
-<div class="ttc" id="alavalink_8h_html_a54d1aee32f3948998bc5e736de982e72"><div class="ttname"><a href="lavalink_8h.html#a54d1aee32f3948998bc5e736de982e72">coglink_disconnectNode</a></div><div class="ttdeci">void coglink_disconnectNode(struct coglink_lavaInfo *lavaInfo, int nodePos)</div></div>
-<div class="ttc" id="alavalink_8h_html_a728f60e0cb8086a4ef5d8f035961aee1"><div class="ttname"><a href="lavalink_8h.html#a728f60e0cb8086a4ef5d8f035961aee1">coglink_setEvents</a></div><div class="ttdeci">void coglink_setEvents(struct coglink_lavaInfo *lavaInfo, struct coglink_lavalinkEvents *lavalinkEvents)</div></div>
-<div class="ttc" id="alavalink_8h_html_a877d08320b177064f1a33360b54179da"><div class="ttname"><a href="lavalink_8h.html#a877d08320b177064f1a33360b54179da">coglink_connectNodeCleanup</a></div><div class="ttdeci">void coglink_connectNodeCleanup(struct coglink_lavaInfo *lavaInfo, struct discord *client)</div></div>
-<div class="ttc" id="alavalink_8h_html_a8af236e960e9b3a43ecc2b7cc73e63b1"><div class="ttname"><a href="lavalink_8h.html#a8af236e960e9b3a43ecc2b7cc73e63b1">coglink_joinUserVoiceChannel</a></div><div class="ttdeci">int coglink_joinUserVoiceChannel(struct coglink_lavaInfo *lavaInfo, struct discord *client, u64snowflake userId, u64snowflake guildId)</div></div>
-<div class="ttc" id="alavalink_8h_html_ac276b59defe378d9ba0d0a79cbd0b3bf"><div class="ttname"><a href="lavalink_8h.html#ac276b59defe378d9ba0d0a79cbd0b3bf">coglink_getUserVoiceChannel</a></div><div class="ttdeci">int coglink_getUserVoiceChannel(struct coglink_lavaInfo *lavaInfo, u64snowflake userId, char channelId[], int channelIdSize)</div></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#endif </span><span class="comment">/* COGLINK_LAVALINK_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aevents_8h_html"><div class="ttname"><a href="events_8h.html">events.h</a></div><div class="ttdoc">Events for the Lavalink and NodeLink client.</div></div>
+<div class="ttc" id="arest_8h_html"><div class="ttname"><a href="rest_8h.html">rest.h</a></div><div class="ttdoc">REST API function for the node.</div></div>
+<div class="ttc" id="awebsocket_8h_html"><div class="ttname"><a href="websocket_8h.html">websocket.h</a></div><div class="ttdoc">Websocket client for the node.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

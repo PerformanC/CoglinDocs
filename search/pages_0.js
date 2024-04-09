@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['coglink_0',['Coglink',['../index.html',1,'']]]
+  ['coglink_0',['CogLink',['../index.html',1,'']]]
 ];

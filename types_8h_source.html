@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Coglink: include/plugins.h File Reference</title>
+<title>CogLink: include/types.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Coglink<span id="projectnumber">&#160;v1.7.0</span>
+   <div id="projectname">CogLink<span id="projectnumber">&#160;v3.0.0</span>
    </div>
   </td>
  </tr>
@@ -66,61 +66,27 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">plugins.h File Reference</div></div>
+  <div class="headertitle"><div class="title">types.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;concord/types.h&gt;</code><br />
-<code>#include &lt;concord/discord.h&gt;</code><br />
-<code>#include &lt;concord/discord-events.h&gt;</code><br />
-</div>
-<p><a href="plugins_8h_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a70633102fff3e6a3d372290012185d61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plugins_8h.html#a70633102fff3e6a3d372290012185d61">coglink_setPluginEvents</a> (struct coglink_lavaInfo *lavaInfo, struct coglink_pluginEvents *pluginEvents)</td></tr>
-<tr class="separator:a70633102fff3e6a3d372290012185d61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >File containing the functions for plugin support. </p>
-</div><h2 class="groupheader">Function Documentation</h2>
-<a id="a70633102fff3e6a3d372290012185d61" name="a70633102fff3e6a3d372290012185d61"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a70633102fff3e6a3d372290012185d61">&#9670;&nbsp;</a></span>coglink_setPluginEvents()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void coglink_setPluginEvents </td>
-          <td>(</td>
-          <td class="paramtype">struct coglink_lavaInfo *&#160;</td>
-          <td class="paramname"><em>lavaInfo</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">struct coglink_pluginEvents *&#160;</td>
-          <td class="paramname"><em>pluginEvents</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p >Set the events that will be executed when performing a certain function. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">lavaInfo</td><td>Structure with important informations of the Lavalink. </td></tr>
-    <tr><td class="paramname">pluginEvents</td><td>Structure with the pointer to the functions. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-</div><!-- contents -->
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef COGLINK_TYPES_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define COGLINK_TYPES_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#define COGLINK_PARSE_FAILED   -6</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#define COGLINK_NODE_OFFLINE   -5</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#define COGLINK_CURL_ERROR     -4</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#define COGLINK_NOT_FOUND      -3</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#define COGLINK_ALREADY_EXISTS -2</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define COGLINK_FAILED         -1</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define COGLINK_SUCCESS         0</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#define COGLINK_PROCEED         1</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#define bool _Bool</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#define true 1</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#define false 0</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#endif </span><span class="comment">/* COGLINK_TYPES_H */</span><span class="preprocessor"></span></div>
+</div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
